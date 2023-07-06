@@ -1,14 +1,11 @@
-﻿using NLog;
-using NLog.Windows.Forms;
+﻿using NLog.Windows.Forms;
 using System.Windows.Forms;
 
-namespace NlogForm
+namespace NLogForm
 {
-    public partial class LogForm1 : Form
+    public partial class LogFormOther : Form
     {
-        public static LogForm1 Instance = new LogForm1();
-
-        public LogForm1()
+        public LogFormOther()
         {
             InitializeComponent();
             RichTextBoxTarget.ReInitializeAllTextboxes(this); // 将 NLog Target 附加到 RichTextBox

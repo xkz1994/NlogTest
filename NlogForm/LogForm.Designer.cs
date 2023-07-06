@@ -1,4 +1,4 @@
-﻿namespace NlogForm
+﻿namespace NLogForm
 {
     partial class LogForm
     {

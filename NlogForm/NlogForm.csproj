@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F3905D32-1A88-4BDA-9DB7-6BC1AD3F7578}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>NlogForm</RootNamespace>
-    <AssemblyName>NlogForm</AssemblyName>
+    <RootNamespace>NLogForm</RootNamespace>
+    <AssemblyName>NLogForm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -53,11 +53,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogForm1.cs">
+    <Compile Include="LogFormOther.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogForm1.Designer.cs">
-      <DependentUpon>LogForm1.cs</DependentUpon>
+    <Compile Include="LogFormOther.Designer.cs">
+      <DependentUpon>LogFormOther.cs</DependentUpon>
     </Compile>
     <Compile Include="LogForm.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LogForm1.resx">
-      <DependentUpon>LogForm1.cs</DependentUpon>
+    <EmbeddedResource Include="LogFormOther.resx">
+      <DependentUpon>LogFormOther.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogForm.resx">
       <DependentUpon>LogForm.cs</DependentUpon>

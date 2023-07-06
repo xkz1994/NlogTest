@@ -1,17 +1,17 @@
-﻿using NlogForm;
+﻿using NLog;
+using NLogForm;
 using System.Windows.Forms;
-using NLog;
 
-namespace NlogTest
+namespace NLogTest
 {
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
-        private static readonly LogForm LogForm = LogForm.Instance;
-        public Form1()
+
+        public Form()
         {
             InitializeComponent();
-            PanelShowForm(panel, LogForm);
+            PanelShowForm(panel, new LogForm());
             Logger.Debug("test");
             Logger.Info("test");
             Logger.Warn("test");
@@ -23,7 +23,7 @@ namespace NlogTest
         /// </summary>
         /// <param name="panel">panel</param>
         /// <param name="form">窗体</param>
-        public static void PanelShowForm(Panel panel, Form form)
+        public static void PanelShowForm(Panel panel, System.Windows.Forms.Form form)
         {
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -35,7 +35,7 @@ namespace NlogTest
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            new Form2().ShowDialog();
+            new FormOther().Show();
         }
 
         private void button2_Click(object sender, System.EventArgs e)

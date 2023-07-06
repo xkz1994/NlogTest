@@ -1,13 +1,10 @@
-﻿using NLog;
-using NLog.Windows.Forms;
+﻿using NLog.Windows.Forms;
 using System.Windows.Forms;
 
-namespace NlogForm
+namespace NLogForm
 {
     public partial class LogForm : Form
     {
-        public static LogForm Instance = new LogForm();
-
         public LogForm()
         {
             InitializeComponent();

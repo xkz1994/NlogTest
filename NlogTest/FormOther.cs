@@ -1,29 +1,18 @@
 ﻿using NLog;
-using NlogForm;
+using NLogForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NlogTest
+namespace NLogTest
 {
-    public partial class Form2 : Form
+    public partial class FormOther : System.Windows.Forms.Form
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
-        public Form2()
+        public FormOther()
         {
             InitializeComponent();
-            PanelShowForm(panel, LogForm1.Instance);
-            Logger.Debug("test");
-            Logger.Info("test");
-            Logger.Warn("test");
-            Logger.Error("test");
+            PanelShowForm(panel, new LogFormOther());
         }
 
         /// <summary>
@@ -31,7 +20,7 @@ namespace NlogTest
         /// </summary>
         /// <param name="panel">panel</param>
         /// <param name="form">窗体</param>
-        public static void PanelShowForm(Panel panel, Form form)
+        public static void PanelShowForm(Panel panel, System.Windows.Forms.Form form)
         {
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -43,7 +32,10 @@ namespace NlogTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Logger.Info("111");
+            Logger.Debug("test");
+            Logger.Info("test");
+            Logger.Warn("test");
+            Logger.Error("test");
         }
     }
 }
