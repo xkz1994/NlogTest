@@ -19,7 +19,7 @@ namespace NlogTest
         public Form2()
         {
             InitializeComponent();
-            PanelShowForm(panel, LogForm.Instance);
+            PanelShowForm(panel, LogForm1.Instance);
             Logger.Debug("test");
             Logger.Info("test");
             Logger.Warn("test");

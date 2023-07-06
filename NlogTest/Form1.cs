@@ -7,10 +7,11 @@ namespace NlogTest
     public partial class Form1 : Form
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private static readonly LogForm LogForm = LogForm.Instance;
         public Form1()
         {
             InitializeComponent();
-            PanelShowForm(panel, LogForm.Instance);
+            PanelShowForm(panel, LogForm);
             Logger.Debug("test");
             Logger.Info("test");
             Logger.Warn("test");
@@ -35,6 +36,14 @@ namespace NlogTest
         private void button1_Click(object sender, System.EventArgs e)
         {
             new Form2().ShowDialog();
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            Logger.Debug("test");
+            Logger.Info("test");
+            Logger.Warn("test");
+            Logger.Error("test");
         }
     }
 }
