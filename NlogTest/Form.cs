@@ -1,6 +1,8 @@
-﻿using NLog;
+﻿using System;
+using NLog;
 using NLogForm;
 using System.Windows.Forms;
+using NLog.Fluent;
 
 namespace NLogTest
 {
@@ -44,6 +46,37 @@ namespace NLogTest
             Logger.Info("test");
             Logger.Warn("test");
             Logger.Error("test");
+            Test.Test1();
+            Test.Test2();
+        }
+    }
+
+    public static class Test
+    {
+        static Logger logger = LogManager.GetCurrentClassLogger();
+
+        public static void Test1()
+        {
+            try
+            {
+                logger.Debug("test1");
+                logger.Info("test1");
+                logger.Warn("test1");
+                logger.Error(new Exception("test1"), "test1");
+                throw new ApplicationException("test1");
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "test1 错误");
+            }
+        }
+
+        public static void Test2()
+        {
+            logger.Debug("test2");
+            logger.Info("test2");
+            logger.Warn("test2");
+            logger.Error(new Exception("test2"), "test2");
         }
     }
 }
